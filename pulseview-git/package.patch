@@ -1,0 +1,12 @@
+diff -aur pulseview/pv/binding/inputoutput.cpp pulseview-new/pv/binding/inputoutput.cpp
+--- pulseview/pv/binding/inputoutput.cpp	2015-05-06 01:29:38.782895156 +0200
++++ pulseview-new/pv/binding/inputoutput.cpp	2015-05-06 01:46:05.002877262 +0200
+@@ -81,7 +81,7 @@
+ 			prop = bind_enum(name, values, get, set);
+ 		else if (def_val.is_of_type(VariantType("d")))
+ 			prop = shared_ptr<Property>(new Double(name, 2, "",
+-				nullptr, nullptr, get, set));
++				boost::none, boost::none, get, set));
+ 		else if (def_val.is_of_type(VariantType("u")))
+ 			prop = shared_ptr<Property>(
+ 				new Int(name, "", none, get, set));

@@ -1,0 +1,23 @@
+pkgname=libsigrok-git
+pkgver=1
+pkgrel=1
+pkgdesc="Libsigrok, a lib for sigrok"
+arch=('x86_64' 'i686')
+license=('GPLv3')
+makedepends=()
+conflicts=()
+replaces=()
+backup=()
+source=("libsigrok-git-$pkgver::git+git://sigrok.org/libsigrok")
+md5sums=('SKIP')
+build() {
+  cd "$pkgname-$pkgver"
+  ./autogen.sh
+  ./configure --prefix=/usr --disable-java --disable-python
+  make
+}
+
+package() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+  make DESTDIR="${pkgdir}" PREFIX=/usr install
+}
