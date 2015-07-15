@@ -1,12 +1,25 @@
-diff -aur pulseview/pv/binding/inputoutput.cpp pulseview-new/pv/binding/inputoutput.cpp
---- pulseview/pv/binding/inputoutput.cpp	2015-05-06 01:29:38.782895156 +0200
-+++ pulseview-new/pv/binding/inputoutput.cpp	2015-05-06 01:46:05.002877262 +0200
-@@ -81,7 +81,7 @@
- 			prop = bind_enum(name, values, get, set);
+From c8a76f47de7406ddc90542008634002a231f79fb Mon Sep 17 00:00:00 2001
+From: Bart de Waal <bart@waalamo.com>
+Date: Tue, 30 Jun 2015 01:15:39 +0200
+Subject: [PATCH] DO not remember
+
+---
+ pv/binding/inputoutput.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/pv/binding/inputoutput.cpp b/pv/binding/inputoutput.cpp
+index 956b12b..bb75f19 100644
+--- a/pv/binding/inputoutput.cpp
++++ b/pv/binding/inputoutput.cpp
+@@ -85,7 +85,7 @@ InputOutput::InputOutput(
+ 			prop = shared_ptr<Property>(new Bool(name, get, set));
  		else if (def_val.is_of_type(VariantType("d")))
  			prop = shared_ptr<Property>(new Double(name, 2, "",
 -				nullptr, nullptr, get, set));
 +				boost::none, boost::none, get, set));
- 		else if (def_val.is_of_type(VariantType("u")))
- 			prop = shared_ptr<Property>(
- 				new Int(name, "", none, get, set));
+ 		else if (def_val.is_of_type(VariantType("i")) ||
+ 			def_val.is_of_type(VariantType("t")) ||
+ 			def_val.is_of_type(VariantType("u")))
+-- 
+2.4.4
+

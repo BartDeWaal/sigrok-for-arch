@@ -3,7 +3,7 @@
 
 pkgname=pulseview-git
 _pkgname=pulseview
-pkgver=1123.198f9bc
+pkgver=1175.449aec3
 pkgrel=1
 pkgdesc="A Qt based logic analyzer GUI for sigrok. (git version)"
 arch=('i686' 'x86_64')
@@ -42,6 +42,6 @@ package() {
 }
 prepare() {
   cd "$srcdir/$_pkgname"
-  patch -Np1 -i ../package.patch
+#  patch -Np1 -i ../package.patch
 }
 # vim:set ts=2 sw=2 et:
