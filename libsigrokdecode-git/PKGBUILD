@@ -1,0 +1,23 @@
+pkgname=libsigrokdecode-git
+pkgver=1
+pkgrel=1
+pkgdesc="Sigrok Protocol Decoders"
+arch=('x86_64' 'i686')
+license=('GPLv3')
+makedepends=()
+conflicts=()
+replaces=()
+backup=()
+source=("libsigrokdecode-git-$pkgver::git+git://sigrok.org/libsigrokdecode")
+md5sums=('SKIP')
+build() {
+  cd "$pkgname-$pkgver"
+  ./autogen.sh
+  ./configure --prefix=/usr
+  make
+}
+
+package() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+  make DESTDIR="${pkgdir}" PREFIX=/usr install
+}
