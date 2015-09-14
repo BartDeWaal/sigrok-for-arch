@@ -3,7 +3,7 @@
 
 pkgname=pulseview-git
 _pkgname=pulseview
-pkgver=1179.d16704e
+pkgver=1187.ce11b2e
 pkgrel=1
 pkgdesc="A Qt based logic analyzer GUI for sigrok. (git version)"
 arch=('i686' 'x86_64')

@@ -1,6 +1,6 @@
 pkgname=libsigrokdecode-git
 _pkgname=libsigrokdecode
-pkgver=994.f7504c3
+pkgver=1015.27b3f2b
 pkgrel=1
 pkgdesc="Sigrok Protocol Decoders"
 arch=('x86_64' 'i686')

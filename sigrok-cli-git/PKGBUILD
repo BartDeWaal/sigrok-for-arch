@@ -3,7 +3,7 @@
 
 pkgname=sigrok-cli-git
 _pkgname=sigrok-cli
-pkgver=396.bc5b66d
+pkgver=407.84b39e3
 pkgrel=1
 pkgdesc="Client software that supports various hardware logic analyzers, CLI client (git version)"
 arch=('i686' 'x86_64')

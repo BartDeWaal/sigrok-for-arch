@@ -1,7 +1,7 @@
 pkgname=libsigrok-git
 _pkgname=libsigrok
 pkgver=3251.e6b8f35
-pkgrel=1
+pkgrel=2
 pkgdesc="Libsigrok, a lib for sigrok"
 arch=('x86_64' 'i686')
 license=('GPLv3')
@@ -14,7 +14,7 @@ md5sums=('SKIP')
 build() {
   cd "$srcdir/$_pkgname"
   ./autogen.sh
-  ./configure --prefix=/usr --disable-java --disable-python
+  ./configure --prefix=/usr
   make
 }
 
